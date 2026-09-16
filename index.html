@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EXPERT PREDICT</title>
+<style>body{background:#0a0e2a;color:#fff;font-family:Arial;padding:10px;margin:0}.header{background:#ffcc00;color:#000;text-align:center;padding:10px;font-weight:bold}.card{background:#1a2040;margin:10px 0;padding:12px;border-radius:10px;border-left:4px solid #00ff88}.odds{float:right;background:#0066ff;color:#fff;padding:5px 12px;border-radius:20px;font-weight:bold}</style>
+</head><body>
+<div class="header">VIP 95% WIN - @Mrzerooss</div>
+<div id="tips" style="margin-top:20px">Loading latest tips...</div>
+<script>
+fetch('https://cdn.jsdelivr.net/gh/shadaiel77-design/EXPERT-PREDICT-@main/free.json?v='+Date.now())
+.then(r=>r.json()).then(d=>{
+let h='';d.forEach(m=>{h+=`<div class="card"><span class="odds">${m.odds}</span><div style="font-size:12px;opacity:.7">${m.league}</div><div style="margin:5px 0;font-weight:bold">${m.match}</div><div style="color:#ffcc00">Tip: ${m.tip}</div></div>`});document.getElementById('tips').innerHTML=h;
+});
+</script>
+</body></html>
