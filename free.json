@@ -1,4 +1,14 @@
 [
-  {"league":"Europa LEAGUE","match":"Olympiakos piraeus vs Jagiellonia ","tip":"Home","odds":"1.36"},
-  {"league":"Europa League","match":"Anderlecht vs Lyon","tip":"HT Over 0.5","odds":"1.29"},
+  {
+    "league": "Europa League",
+    "match": "Olympiakos Piraeus vs Pafos",
+    "tip": "Home Win",
+    "odds": "1.36"
+  },
+  {
+    "league": "Europa League",
+    "match": "Anderlecht vs Lyon",
+    "tip": "HT Over 0.5",
+    "odds": "1.29"
+  }
 ]
