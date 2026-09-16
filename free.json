@@ -1,7 +1,4 @@
 [
-  {"league":"PREMIER LEAGUE","match":"Man City vs Arsenal","tip":"Over 2.5","odds":"1.60"},
-  {"league":"LA LIGA","match":"Barcelona vs Real Madrid","tip":"BTTS Yes","odds":"1.75"},
-  {"league":"SERIE A","match":"Inter vs AC Milan","tip":"Home Win","odds":"1.85"},
-  {"league":"BUNDESLIGA","match":"Bayern vs Dortmund","tip":"Over 1.5","odds":"1.40"},
-  {"league":"LIGUE 1","match":"PSG vs Marseille","tip":"Over 2.5","odds":"1.65"}
+  {"league":"Europa LEAGUE","match":"Olympiakos piraeus vs Jagiellonia ","tip":"Home","odds":"1.36"},
+  {"league":"Europa League","match":"Anderlecht vs Lyon","tip":"HT Over 0.5","odds":"1.29"},
 ]
