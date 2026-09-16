@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EXPERT PREDICT</title>
-<style>body{background:#0a0e2a;color:#fff;font-family:Arial;padding:10px;margin:0}.header{background:#ffcc00;color:#000;text-align:center;padding:12px;font-weight:bold}.card{background:#1a2040;margin:12px 0;padding:12px;border-radius:10px;border-left:4px solid #00ff88}.odds{float:right;background:#0066ff;color:#fff;padding:5px 12px;border-radius:20px;font-weight:bold}</style>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{background:#0a0e2a;color:#fff;font-family:sans-serif;margin:0;padding:10px}
+.header{background:gold;color:#000;text-align:center;padding:8px;font-weight:bold}
+.tabs{display:flex;gap:8px;margin:10px 0}
+.tab{flex:1;padding:10px;text-align:center;border-radius:20px;background:#1a2040;cursor:pointer}
+.tab.active{background:#00c853;color:#fff}
+.card{background:#1e274e;margin:8px 0;padding:12px;border-radius:12px;border-left:4px solid #2196f3}
+</style>
 </head><body>
-<div class="header">VIP 95% WIN - @Mrzerooss</div>
+<div class="header">🚀 @Mrzerooss - VIP 95% WIN!</div>
+<div style="background:#00c853;text-align:center;padding:10px;border-radius:20px;margin:10px 0">🔥 EXPERT PREDICT 🔥 LIVE</div>
+<div class="tabs">
+<div class="tab active" onclick="loadTips('free')">🆓 FREE</div>
+<div class="tab" onclick="loadTips('vip')">💎 VIP</div>
+<div class="tab" onclick="loadTips('won')">✅ WON</div>
+</div>
 <div id="tips">Loading...</div>
 <script>
-fetch('./free.json?v='+Date.now()).then(r=>r.json()).then(d=>{let h='';d.forEach(m=>{h+=`<div class="card"><span class="odds">${m.odds}</span><div>${m.league}</div><div style="font-weight:bold">${m.match}</div><div style="color:#ffcc00">Tip: ${m.tip}</div></div>`});document.getElementById('tips').innerHTML=h}).catch(e=>{document.getElementById('tips').innerHTML='Error: '+e});
+function loadTips(type){
+document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+event.target.classList.add('active');
+let file = type==='won' ? 'free.json' : type+'.json';
+fetch('./'+file+'?v='+Date.now()).then(r=>r.json()).then(data=>{
+let html='';
+data.forEach(m=>{
+html+=`<div class="card"><small>${m.league||'Match'}</small><b style="float:right;background:#2962ff;padding:4px 12px;border-radius:12px">${m.odds||m.tip_odds||'1.5'}</b><div style="margin-top:8px">⚽ ${m.match||m.teams}</div><div style="color:#8bc34a">Tip: ${m.tip}</div><div style="color:#4caf50">Odds: ${m.odds}</div></div>`;
+});
+document.getElementById('tips').innerHTML=html||'No tips yet';
+});
+}
+loadTips('free');
 </script>
 </body></html>
