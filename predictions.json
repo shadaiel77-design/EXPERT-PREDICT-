@@ -1,0 +1,35 @@
+{
+  "lastUpdated": "2026-05-13",
+  "matches": [
+    {
+      "league": "Premier League",
+      "home": "Man City",
+      "away": "Arsenal",
+      "prediction": "Over 2.5 Goals",
+      "tip": "GG & Over 2.5",
+      "odds": "1.85",
+      "confidence": "88%",
+      "time": "Today 20:45"
+    },
+    {
+      "league": "La Liga",
+      "home": "Barcelona",
+      "away": "Real Madrid",
+      "prediction": "Home Win",
+      "tip": "1X & Over 1.5",
+      "odds": "1.95",
+      "confidence": "85%",
+      "time": "Today 21:00"
+    },
+    {
+      "league": "Bundesliga",
+      "home": "Bayern Munich",
+      "away": "Dortmund",
+      "prediction": "Both Teams to Score",
+      "tip": "GG",
+      "odds": "1.65",
+      "confidence": "90%",
+      "time": "Tomorrow 19:30"
+    }
+  ]
+}
