@@ -4,42 +4,44 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>EXPERT PREDICT</title>
-<style>
-body{font-family:Arial;background:#0f172a;color:#fff;padding:15px}
-.header{background:linear-gradient(135deg,#1e40af,#3b82f6);padding:20px;border-radius:15px;text-align:center;margin-bottom:20px}
-.card{background:#1e293b;border-radius:12px;padding:15px;margin-bottom:15px;border:1px solid #334155}
-.match{font-weight:bold;font-size:18px}
-.league{color:#94a3b8;font-size:12px;margin-bottom:8px}
-.tip{background:#0f172a;padding:10px;border-radius:8px;margin-top:8px}
-.tip b{color:#22c55e}
-.odds{color:#fbbf24}
-.time{color:#60a5fa;font-size:13px;margin-top:5px}
-.conf{float:right;background:#22c55e;color:#000;padding:3px 8px;border-radius:10px;font-size:12px}
-</style>
 </head>
-<body>
-<div class="header">
+<body style="font-family:Arial;background:#0f172a;color:white;padding:20px;margin:0">
+<div style="background:blue;padding:20px;border-radius:15px;text-align:center">
 <h1>⚽ EXPERT PREDICT</h1>
-<p>Daily Expert Football Tips</p>
-<p id="upd" style="font-size:11px;margin-top:8px"></p>
+<p>Daily Winning Tips</p>
 </div>
-<div id="box" style="text-align:center;padding:30px">Loading...</div>
-<script>
-async function load(){
-try{
-let r=await fetch('./predictions.json?v='+Date.now());
-let d=await r.json();
-document.getElementById('upd').textContent=new Date().toLocaleString();
-let h='';
-d.matches.forEach(m=>{
-h+=`<div class="card"><span class="conf">${m.confidence||'85%'}</span><div class="league">${m.league}</div><div class="match">${m.home} vs ${m.away}</div><div class="tip"><b>Prediction:</b> ${m.prediction}</div><div class="tip"><b>Tip:</b> ${m.tip} <span class="odds">@${m.odds}</span></div><div class="time">${m.time}</div></div>`;
-});
-document.getElementById('box').innerHTML=h||'No predictions yet';
-}catch(e){
-document.getElementById('box').innerHTML='Error loading. Refresh!<br>'+e.message;
-}
-}
-load();
-</script>
+
+<div style="background:#1e293b;margin-top:20px;padding:15px;border-radius:12px">
+<div style="color:gray;font-size:12px">Premier League</div>
+<b>Man City vs Arsenal</b>
+<div style="background:#0f172a;padding:10px;border-radius:8px;margin-top:10px">
+<b style="color:lightgreen">Prediction: Over 2.5 Goals</b><br>
+Tip: GG & Over 2.5 @1.85<br>
+<span style="color:lightblue">Today 20:45</span>
+</div>
+</div>
+
+<div style="background:#1e293b;margin-top:15px;padding:15px;border-radius:12px">
+<div style="color:gray;font-size:12px">La Liga</div>
+<b>Barcelona vs Real Madrid</b>
+<div style="background:#0f172a;padding:10px;border-radius:8px;margin-top:10px">
+<b style="color:lightgreen">Prediction: Home Win</b><br>
+Tip: 1X & Over 1.5 @1.95<br>
+<span style="color:lightblue">Today 21:00</span>
+</div>
+</div>
+
+<div style="background:#1e293b;margin-top:15px;padding:15px;border-radius:12px">
+<div style="color:gray;font-size:12px">Bundesliga</div>
+<b>Bayern vs Dortmund</b>
+<div style="background:#0f172a;padding:10px;border-radius:8px;margin-top:10px">
+<b style="color:lightgreen">Prediction: Both Teams Score</b><br>
+Tip: GG @1.65<br>
+<span style="color:lightblue">Tomorrow 19:30</span>
+</div>
+</div>
+
+<p style="text-align:center;margin-top:20px;color:gray">Site is Working! ✅</p>
+
 </body>
 </html>
