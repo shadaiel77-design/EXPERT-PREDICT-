@@ -1,0 +1,18 @@
+{
+  "name": "EXPERT PREDICT VIP",
+  "short_name": "EXPERT",
+  "description": "Daily VIP Sure Predictions - Private VIP Access",
+  "start_url": "/EXPERT-PREDICT-/",
+  "scope": "/EXPERT-PREDICT-/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#FFD700",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgZmlsbD0iIzAwMCIvPjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMTIwIiBmaWxsPSIjRkZENzAwIi8+PHRleHQgeD0iMjU2IiB5PSIyOTUiIGZvbnQtc2l6ZT0iMTQwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkU8L3RleHQ+PC9zdmc+",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
