@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>EXPERT PREDICT VIP</title></head>
+<body style="background:#000;color:#fff;text-align:center;padding:40px;font-family:Arial">
+<h1>EXPERT PREDICT VIP</h1>
+<button onclick="subscribe()" style="padding:18px 35px;background:#ffcc00;font-weight:bold;border:0;border-radius:12px;font-size:20px">Subscribe</button>
+<p id="status" style="color:#ffcc00"></p>
+<button onclick="if(typeof AndroidAPI!=='undefined'){AndroidAPI.showNotification('Test','Real APK push works!')}" style="margin-top:15px;padding:10px;background:#333;color:#fff">Test APK</button>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-messaging.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+const cfg={apiKey:"AIzaSyBJXow-n2fauk3Lfaq5Rw7jxg3LLcKsyMU",authDomain:"expert-predict-7b860.firebaseapp.com",projectId:"expert-predict-7b860",storageBucket:"expert-predict-7b860.firebasestorage.app",messagingSenderId:"1042363145863",appId:"1:1042363145863:web:4da5da0b670aa457d06222"};
+const app=initializeApp(cfg);const messaging=getMessaging(app);const db=getFirestore(app);
+window.subscribe=async()=>{const s=document.getElementById('status');try{s.innerText='...';const p=await Notification.requestPermission();if(p!=='granted')return;const reg=await navigator.serviceWorker.register('/firebase-messaging-sw.js');await navigator.serviceWorker.ready;const tok=await getToken(messaging,{vapidKey:"BFe2GVcWzk4v90fjBi5dtFCbeLQ5xIlwuLQQmFcMkLIEqcy_egJ1ULpJVoKk_xJvLK2t9jl-bLaeG9OI6tPirEI",serviceWorkerRegistration:reg});await addDoc(collection(db,"push_tokens"),{token:tok,time:new Date()});s.innerText='Subscribed!';if(typeof AndroidAPI!=='undefined')AndroidAPI.showNotification('Subscribed','Tips active!');}catch(e){s.innerText=e.message}};
+onMessage(messaging,(pl)=>{const t=pl.notification?.title||'New Tip';const b=pl.notification?.body||'Check';if(typeof AndroidAPI!=='undefined')AndroidAPI.showNotification(t,b);else alert(t+' '+b);});
+</script></body></html>
