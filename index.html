@@ -1,153 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><style>
-@font-face {
-  font-family: "Optimistic";
-  font-style: normal;
-  font-weight: 400 600;
-  font-display: swap;
-  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Optimistic Mono";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
-}
-:where(html) {
-  font-family: "Optimistic", system-ui, sans-serif;
-}
-:where(code, pre, kbd, samp) {
-  font-family: "Optimistic Mono", ui-monospace, monospace;
-}
-</style>
+<head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EXPERT PREDICT VIP</title>
-<meta name="description" content="Daily VIP Sure Predictions - Private VIP Access">
-<meta name="theme-color" content="#FFD700">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23FFD700'/><text x='50%' y='58%' text-anchor='middle' font-family='Arial' font-weight='900' font-size='32' fill='black'>E</text></svg>">
+<link rel="icon" href="icon-512.png">
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui}
-body{background:#000;color:#fff;min-height:100vh}
-.header{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:rgba(0,0,0,.92);border-bottom:1px solid rgba(255,215,0,.15)}
-.logo{display:flex;gap:10px;align-items:center}
-.logo-icon{width:40px;height:40px;border-radius:12px;background:#FFD700;color:#000;display:grid;place-items:center;font-weight:900}
-.logo-text b{display:block;font-size:14px}
-.logo-text span{font-size:10px;color:#FFD700;letter-spacing:2px}
-.icon-btn{width:44px;height:44px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.06);color:#fff;display:grid;place-items:center;cursor:pointer}
-.icon-btn.gold{background:#FFD700;color:#000}
-.lock-overlay{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.85);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;padding:20px}
-.lock-card{width:100%;max-width:360px;background:#0c0c0c;border:1px solid rgba(255,215,0,.25);border-radius:24px;padding:28px;text-align:center}
-.lock-card input{width:100%;height:52px;border-radius:14px;border:1px solid rgba(255,215,0,.2);background:#000;color:#fff;text-align:center;font-size:20px;letter-spacing:6px;margin:14px 0 12px;outline:none}
-.lock-card button{width:100%;height:52px;border-radius:14px;background:#FFD700;color:#000;font-weight:900;border:none;cursor:pointer}
-.card{margin:16px;border-radius:22px;border:1px solid rgba(255,215,0,.15);background:linear-gradient(135deg,#111,#0a0a0a);padding:18px}
-.badge{display:inline-flex;padding:6px 12px;border-radius:999px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.2);color:#FFD700;font-size:11px;font-weight:800}
-.tip{margin:12px 16px;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:#0c0c0c;padding:14px}
-.tip-top{display:flex;justify-content:space-between;font-size:11px;color:#999}
-.odd{background:#FFD700;color:#000;font-weight:800;padding:6px 10px;border-radius:999px;font-size:12px}
-.vs{background:rgba(255,255,255,.08);padding:3px 8px;border-radius:999px;font-size:11px}
-.conf{border:1px solid rgba(255,255,255,.1);padding:6px 10px;border-radius:999px;font-size:11px;margin-top:8px;display:inline-block}
-.vip-lock{margin:16px;border:1px dashed rgba(255,215,0,.3);border-radius:20px;padding:20px;text-align:center;background:rgba(255,215,0,.04)}
-.vip-lock button{margin-top:12px;padding:12px 20px;border-radius:12px;background:#FFD700;color:#000;font-weight:800;border:none}
-.hidden{display:none!important}
+body{margin:0;font-family:Arial;background:#0a0a0a;color:#fff}
+header{padding:15px;background:#111;display:flex;justify-content:space-between;align-items:center}
+button{padding:10px 16px;border:0;border-radius:8px;font-weight:bold}
+#bellBtn{background:#ffcc00}
+.card{background:#1a1a1a;margin:10px;padding:15px;border-radius:12px}
+.locked{filter:blur(8px)}
 </style>
 </head>
 <body>
-<div class="header">
-<div class="logo"><div class="logo-icon">E</div><div class="logo-text"><b>EXPERT PREDICT</b><span>VIP • PRIVATE</span></div></div>
-<div style="display:flex;gap:8px"><button class="icon-btn" id="bellBtn">🔔</button><button class="icon-btn gold" id="shareBtn">↗</button></div>
+<header>
+<h3>🔥 EXPERT PREDICT</h3>
+<div>
+<button id="bellBtn">🔔 Subscribe</button>
+<button id="shareBtn">Share</button>
 </div>
+</header>
 
-<div class="card">
-<div style="display:flex;justify-content:space-between"><div><div class="badge">● LIVE</div><h2 style="margin-top:10px;font-size:20px">Daily Sure Predictions</h2><p style="margin-top:6px;color:#999;font-size:13px">Free tips open for everyone. VIP locked for subscribers only.</p></div><div style="width:56px;height:56px;border-radius:18px;background:#FFD700;color:#000;display:grid;place-items:center;font-weight:900">VIP</div></div>
-</div>
+<div id="freeTips"></div>
+<div id="vipTips" class="locked"></div>
 
-<div style="padding:0 16px;display:flex;justify-content:space-between;margin-top:8px"><b style="font-size:12px;letter-spacing:1px">FREE TIPS • TODAY</b><span style="font-size:11px;padding:5px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.1);color:#999" id="freeCount">loading</span></div>
-<div id="freeList"></div>
-
-<div id="vipSection">
-<div style="padding:16px 16px 0;display:flex;justify-content:space-between"><b style="font-size:12px;letter-spacing:1px;color:#FFD700">VIP TIPS • PRIVATE</b><span style="font-size:11px;padding:5px 10px;border-radius:999px;background:#FFD700;color:#000;font-weight:800">LOCKED</span></div>
-<div id="vipLocked" class="vip-lock"><div style="font-size:32px">🔒</div><b>VIP Private Access</b><p style="color:#999;font-size:12px;margin-top:6px">This section is for VIP subscribers only.<br>Enter private code to unlock.</p><button id="showUnlockBtn">UNLOCK VIP</button></div>
-<div id="vipList" class="hidden"></div>
-</div>
-
-<div class="card" style="margin-top:20px;display:flex;gap:12px">
-<a href="https://t.me/Mrzerooss" style="flex:1;height:48px;border-radius:14px;background:#229ED9;color:#fff;display:grid;place-items:center;text-decoration:none;font-weight:800">Telegram</a>
-<a href="https://wa.me/237673220943" style="flex:1;height:48px;border-radius:14px;background:#25D366;color:#fff;display:grid;place-items:center;text-decoration:none;font-weight:800">WhatsApp</a>
-</div>
-
-<div id="lockOverlay" class="lock-overlay hidden">
-<div class="lock-card">
-<div class="logo-icon" style="margin:0 auto">E</div>
-<h1 style="margin-top:12px">VIP Private Access</h1>
-<p style="color:#888;font-size:13px;margin-top:6px">Enter your private access code to continue.</p>
-<input id="codeInput" type="password" inputmode="numeric" placeholder="••••" maxlength="6">
-<button id="unlockBtn">UNLOCK</button>
-<button id="cancelBtn" style="margin-top:10px;background:transparent;color:#999;border:1px solid rgba(255,255,255,.1)">Cancel</button>
-<p id="err" style="margin-top:10px;color:#ff4444;font-size:12px;display:none">Incorrect code. Try again.</p>
-</div>
+<button id="showUnlockBtn">Unlock VIP</button>
+<div id="unlockBox" style="display:none">
+<input id="codeInput" placeholder="Enter code">
+<button id="unlockBtn">Unlock</button>
+<button id="cancelBtn">Cancel</button>
+<p id="err" style="color:red;display:none">Wrong code!</p>
 </div>
 
 <script>
-const PRIVATE_CODE='77224';
-const overlay=document.getElementById('lockOverlay');
-const freeList=document.getElementById('freeList');
-const vipList=document.getElementById('vipList');
-const vipLocked=document.getElementById('vipLocked');
-const freeCount=document.getElementById('freeCount');
-
-function isUnlocked(){return localStorage.getItem('vip_unlocked')==='1'}
-function setUnlocked(v){localStorage.setItem('vip_unlocked',v?'1':'0');}
-function updateVIP(){
- if(isUnlocked()){vipLocked.classList.add('hidden');vipList.classList.remove('hidden');}
- else{vipLocked.classList.remove('hidden');vipList.classList.add('hidden');}
-}
-updateVIP();
-
-// Load free.json and vip.json if exist, else fallback mock
-async function loadJSON(name){
- try{const r=await fetch(name+'?t='+Date.now()); if(!r.ok) throw ''; return await r.json();}catch(e){return null}
-}
-function renderTip(m){
- return `<div class="tip"><div class="tip-top"><span>${m.league||m.match||'Match'} • ${m.time||''}</span><span class="odd">ODD ${m.odd||'1.50'}</span></div><div style="font-weight:800;margin-top:8px">${m.home||m.teams||'Home'} <span class="vs">VS</span> ${m.away||''}</div><div style="margin-top:8px"><span class="conf">${m.pick||m.tip||'Over 1.5'}</span> <span class="conf">Confidence ${m.confidence||'88'}%</span></div></div>`;
-}
-(async()=>{
- let freeData=await loadJSON('free.json');
- let vipData=await loadJSON('vip.json');
- if(!freeData){freeData=[{league:'Premier League',time:'18:30',home:'Man City',away:'Arsenal',odd:'1.35',pick:'Over 1.5 Goals',confidence:92},{league:'LaLiga',time:'20:00',home:'Barcelona',away:'Sevilla',odd:'1.55',pick:'Home Win',confidence:88},{league:'Serie A',time:'19:00',home:'Juventus',away:'Roma',odd:'1.75',pick:'BTTS Yes',confidence:85}];}
- if(!vipData){vipData=[{league:'VIP • 21:00',home:'Inter',away:'AC Milan',odd:'2.10',pick:'VIP PICK • BTTS Yes',confidence:95},{league:'VIP • 22:00',home:'PSG',away:'Lyon',odd:'1.95',pick:'Over 2.5 Goals',confidence:93}];}
- freeList.innerHTML=freeData.map(renderTip).join('');
- vipList.innerHTML=vipData.map(renderTip).join('');
- freeCount.textContent=freeData.length+' tips';
-})();
-
-// Unlock flow
-document.getElementById('showUnlockBtn').onclick=()=>{overlay.classList.remove('hidden');document.getElementById('codeInput').focus();};
-document.getElementById('cancelBtn').onclick=()=>overlay.classList.add('hidden');
-document.getElementById('unlockBtn').onclick=doUnlock;
+const PRIVATE_CODE = "VIP2024";
+document.getElementById('showUnlockBtn').onclick=()=>document.getElementById('unlockBox').style.display='block';
+document.getElementById('cancelBtn').onclick=()=>document.getElementById('unlockBox').style.display='none';
 document.getElementById('codeInput').addEventListener('keydown',e=>{if(e.key==='Enter')doUnlock()});
 function doUnlock(){
  const input=document.getElementById('codeInput');
  const err=document.getElementById('err');
- if(input.value===PRIVATE_CODE){setUnlocked(true);overlay.classList.add('hidden');err.style.display='none';input.value='';updateVIP();}
+ if(input.value===PRIVATE_CODE){document.getElementById('vipTips').classList.remove('locked');document.getElementById('unlockBox').style.display='none';setUnlock(true)}
  else{err.style.display='block';input.value='';}
 }
-// Auto-lock when minimize/tab switch
-document.addEventListener('visibilitychange',()=>{if(document.hidden && isUnlocked()){setUnlocked(false);updateVIP();}});
-// Bell
-document.getElementById('bellBtn').onclick=async()=>{
- if(!('Notification' in window)){alert('Notifications not supported');return;}
- if(Notification.permission!=='granted'){await Notification.requestPermission();}
- if(Notification.permission==='granted'){new Notification('EXPERT PREDICT VIP',{body:'New VIP tips are live!'});} else{alert('Please allow notifications');}
-};
-// Share - NO CODE
+function setUnlock(v){localStorage.setItem('unlocked',v)}
+if(localStorage.getItem('unlocked')){document.getElementById('vipTips').classList.remove('locked')}
+
+document.addEventListener('visibilitychange',()=>{if(document.hidden){}});
+
 document.getElementById('shareBtn').onclick=async()=>{
- const data={title:'EXPERT PREDICT VIP',text:'Join EXPERT PREDICT VIP - Daily sure tips!',url:'https://shadaiel77-design.github.io/EXPERT-PREDICT-/'};
- if(navigator.share){try{await navigator.share(data);}catch{}} else {await navigator.clipboard.writeText(data.url);alert('Link copied!');}
+ const data={title:'EXPERT PREDICT VIP',text:'Get winning tips!',url:location.href};
+ if(navigator.share){try{await navigator.share(data)}catch{}}
+ else{alert('Share: '+location.href)}
 };
 </script>
-<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script></body>
-                                                                         </html>
+
+<!-- FIREBASE PUSH - AUTO SUBSCRIBE + BELL -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-messaging.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBJXow-n2fauk3Lfaq5Rw7jxg3LLcKsyMU",
+  authDomain: "expert-predict-7b860.firebaseapp.com",
+  projectId: "expert-predict-7b860",
+  storageBucket: "expert-predict-7b860.firebasestorage.app",
+  messagingSenderId: "1042363145863",
+  appId: "1:1042363145863:web:4da5da0b670aa457d06222"
+};
+const app = initializeApp(firebaseConfig);
+const messaging = getMessaging(app);
+const db = getFirestore(app);
+
+// Auto subscribe after 3 sec
+setTimeout(async()=>{
+ try{
+  const p = await Notification.requestPermission();
+  if(p==='granted'){
+   const token = await getToken(messaging,{vapidKey:"BFe2GVcWzk4v90fjBi5dtFCbeLQ5xIlwuLQQmFcMkLIEqcy_egJ1ULpJVoKk_xJvLK2t9jl-bLaeG9OI6tPirEI"});
+   if(token){await addDoc(collection(db,"push_tokens"),{token,time:new Date()});}
+  }
+ }catch(e){console.log(e)}
+},3000);
+
+// Bell button
+document.getElementById('bellBtn').onclick = async () => {
+ try{
+  const perm = await Notification.requestPermission();
+  if(perm === 'granted'){
+    const token = await getToken(messaging, { vapidKey: "BFe2GVcWzk4v90fjBi5dtFCbeLQ5xIlwuLQQmFcMkLIEqcy_egJ1ULpJVoKk_xJvLK2t9jl-bLaeG9OI6tPirEI" });
+    await addDoc(collection(db, "push_tokens"), { token, time: new Date() });
+    alert('🔔 Subscribed! You will get winning tips!');
+  } else { alert('Please allow notifications!'); }
+ }catch(e){alert(e.message);}
+};
+
+onMessage(messaging, (payload) => {
+  alert("🔔 " + payload.notification.title + "\n" + payload.notification.body);
+});
+
+// Load tips from your JSON files
+async function loadTips(){
+ try{
+  const free = await fetch('free.json').then(r=>r.json());
+  document.getElementById('freeTips').innerHTML = '<h3>FREE TIPS</h3>' + JSON.stringify(free).slice(0,500);
+  const vip = await fetch('vip.json').then(r=>r.json());
+  document.getElementById('vipTips').innerHTML = '<h3>VIP TIPS 🔒</h3>' + JSON.stringify(vip).slice(0,500);
+ }catch{}
+}
+loadTips();
+</script>
+
+<script>(function(){var loc=location.href;})();</script>
+</body>
+</html>
